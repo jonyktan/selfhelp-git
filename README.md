@@ -2,7 +2,12 @@
 
 Personal Git cheat sheet
 
+Contents
+- [Cloning and Changing Remotes](#cloning-and-changing-remotes)
+
 ## Cloning and Changing Remotes
+<details open>
+<summary><i>Click to expand</i></summary>
 
 ### Objective
 
@@ -87,3 +92,5 @@ To clone a public repo into a private repo and track changes of the public repo.
     ```text
     cat .git/config
     ```
+
+</details>
