@@ -2,7 +2,7 @@
 
 Personal Git cheat sheet
 
-Contents
+## Contents
 - [Cloning and Changing Remotes](#cloning-and-changing-remotes)
 
 ## Cloning and Changing Remotes
