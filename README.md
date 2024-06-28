@@ -4,14 +4,72 @@ Personal Git cheat sheet
 
 ## Contents
 - [Cloning and Changing Remotes](#cloning-and-changing-remotes)
+    - [Cloning Only](#cloning-only)
+    - [Clone and Track Updates](#clone-and-track-updates)
 
 ## Cloning and Changing Remotes
-<details open>
+
+
+### <u>Cloning Only</u>
+
+<details>
 <summary><i>Click to expand</i></summary>
 
 ### Objective
 
-To clone a public repo into a private repo and track changes of the public repo.
+To quickly clone a public repo into a private repo. <i>Caveat: clone of public repo on local machine is not usable for development.</i>
+
+### Steps
+
+1. Clone the public repo onto local machine. This includes all branches and commit history, but without any link back to the Github repo, i.e. you will not able to `git fetch` again.
+
+    ```
+    git clone --bare <public repo url> <local folder name>
+    ```
+
+1. Create private repo on Github.
+
+1. Enter local folder.
+
+    ```
+    cd <local folder name>
+    ```
+
+1. Push the local version of the contents of public repo to the private repo. 
+
+    ```
+    git push --mirror <private repo url>
+    ```
+
+1. Delete local folder. 
+
+    ```
+    cd ..
+    ```
+
+    ```
+    rm -rf <local folder name>
+    ```
+
+1. Clone private repo.
+
+    ```
+    git clone <private repo url> <local folder name>
+    ```
+
+1. To setup the new local folder to track changes in the public repo, see steps 7 onward in the [next section](#clone-and-track-updates) to create a tracking remote.
+
+
+</details>
+
+### <u>Clone and Track Updates</u>
+
+<details>
+<summary><i>Click to expand</i></summary>
+
+### Objective
+
+To clone a public repo into a private repo and <u>track changes of the public repo</u>.
 
 ### Steps
 
