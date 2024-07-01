@@ -6,6 +6,8 @@ Personal Git cheat sheet
 - [Cloning and Changing Remotes](#cloning-and-changing-remotes)
     - [Cloning Only](#cloning-only)
     - [Clone and Track Updates](#clone-and-track-updates)
+- [Handling Merge Conflicts](#handling-merge-conflicts)
+    - [Unable to Git Pull as Local Repo Commits have Diverged from Remote](#unable-to-git-pull-as-local-repo-commits-have-diverged-from-remote)
 
 ## Cloning and Changing Remotes
 
@@ -149,6 +151,21 @@ To clone a public repo into a private repo and <u>track changes of the public re
 
     ```text
     cat .git/config
+    ```
+
+</details>
+
+## Handling Merge Conflicts
+
+### <u>Unable to Git Pull as Local Repo Commits have Diverged from Remote</u>
+
+<details>
+<summary><i>Click to expand</i></summary>
+
+- Fetch changes made to the upstream since the last `git fetch`, merge to local branch, and apply existing local commits to the top of the updated local branch (aka "rebasing the local branch on top of the upstream branch after fetching"). 
+
+    ```
+    git pull --rebase
     ```
 
 </details>
