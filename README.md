@@ -162,7 +162,7 @@ To clone a public repo into a private repo and <u>track changes of the public re
 <details>
 <summary><i>Click to expand</i></summary>
 
-- Fetch changes made to the upstream since the last `git fetch`, merge to local branch, and apply existing local commits to the top of the updated local branch (aka "rebasing the local branch on top of the upstream branch after fetching"). 
+- Fetch changes made to the upstream since the last `git fetch`, merge to local branch, and apply existing local commits to the top of the updated local branch (aka "rebasing the local branch on top of the upstream branch after fetching"). (<i>[Explainer](https://gitolite.com/git-pull--rebase)</i>)
 
     ```
     git pull --rebase
