@@ -6,6 +6,9 @@ Personal Git cheat sheet
 - [Cloning and Changing Remotes](#cloning-and-changing-remotes)
     - [Cloning Only](#cloning-only)
     - [Clone and Track Updates](#clone-and-track-updates)
+- [Managing Changes](#managing-changes)
+    - [Squashing Commits in General](#squashing-commits-in-general)
+    - [Squashing Commits During Merge](#squashing-commits-during-merge)
 - [Handling Merge Conflicts](#handling-merge-conflicts)
     - [Unable to Git Pull as Local Repo Commits have Diverged from Remote](#unable-to-git-pull-as-local-repo-commits-have-diverged-from-remote)
 
@@ -152,6 +155,54 @@ To clone a public repo into a private repo and <u>track changes of the public re
     ```text
     cat .git/config
     ```
+
+</details>
+
+## Managing Changes
+
+<details>
+
+<summary><i>Click to expand</i></summary>
+
+### <u>Squashing Commits in General</u>
+
+1. View commit history.
+
+    ```
+    git log --oneline
+    ```
+
+1. Squash *x* past commits.
+
+    ```
+    git rebase -i HEAD~<x>
+    ```
+
+    1. An editor will open. 
+    1. Use `pick` or `p` to retain specific commits. Use `squash` or `s` to combine specific commits. 
+    1. Once done, save the file and close.
+    1. Another editor will open with the new commit messages for further editing if required. 
+    1. Once done, save the file and close. 
+
+### <u>Squashing Commits During Merge</U>
+
+To clean up commits on one branch (e.g. dev branch) when merging it into another (e.g. main branch). 
+
+1. Switch to main branch.
+
+    ```
+    git switch <main branch>
+    ```
+
+1. Use `--squash` flag when merging incoming branch (e.g. dev branch).
+
+    ```
+    git merge --squash <dev branch>
+    ```
+
+1. Commit the changed files with a single commit message. 
+
+1. Push to recipient branch (e.g. main branch), create Pull Request on GitHub, and merge Pull Request. 
 
 </details>
 
