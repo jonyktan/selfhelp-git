@@ -6,6 +6,7 @@ Personal Git cheat sheet
 - [Cloning and Changing Remotes](#cloning-and-changing-remotes)
     - [Cloning Only](#cloning-only)
     - [Clone and Track Updates](#clone-and-track-updates)
+- [Co-Development](#co-development)
 - [Managing Changes](#managing-changes)
     - [Squashing Commits in General](#squashing-commits-in-general)
     - [Squashing Commits During Merge](#squashing-commits-during-merge)
@@ -13,7 +14,6 @@ Personal Git cheat sheet
     - [Unable to Git Pull as Local Repo Commits have Diverged from Remote](#unable-to-git-pull-as-local-repo-commits-have-diverged-from-remote)
 
 ## Cloning and Changing Remotes
-
 
 ### <u>Cloning Only</u>
 
@@ -63,7 +63,6 @@ To quickly clone a public repo into a private repo. <i>Caveat: clone of public r
     ```
 
 1. To setup the new local folder to track changes in the public repo, see steps 7 onward in the [next section](#clone-and-track-updates) to create a tracking remote.
-
 
 </details>
 
@@ -154,6 +153,30 @@ To clone a public repo into a private repo and <u>track changes of the public re
 
     ```text
     cat .git/config
+    ```
+
+</details>
+
+## Co-Development
+
+<details>
+
+<summary><i>Click to expand</i></summary>
+
+### Managing Branches
+
+Create new feature on new working branch.
+
+1. Create new working branch from existing branch (e.g. 'development').
+
+    ```
+    git checkout -b <new branch name> <existing branch name>
+    ```
+
+1. Push the new branch to Github (or remote). 
+
+    ```
+    git push --set-upstream <remote name> <new branch name>
     ```
 
 </details>
