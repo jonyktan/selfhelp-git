@@ -243,3 +243,22 @@ To clean up commits on one branch (e.g. dev branch) when merging it into another
     ```
 
 </details>
+
+## Handling Line Endings
+
+<details>
+<summary><i>Click to expand</i></summary>
+
+### <u>Set global default line endings for Linux</u>
+
+```
+git config --global core.autocrlf input
+```
+
+### <u>Set global default line endings for Windows</u>
+
+```
+git config --global core.autocrlf true
+```
+
+</details>
