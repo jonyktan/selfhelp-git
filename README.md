@@ -262,3 +262,18 @@ git config --global core.autocrlf true
 ```
 
 </details>
+
+## Cleaning Up
+
+<details>
+<summary><i>Click to expand</i></summary>
+
+### Delete Branch
+
+```
+git branch -d <old branch>
+```
+
+- Use `-D` to force delete.
+
+</details>
