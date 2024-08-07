@@ -2,6 +2,7 @@
 
 Personal Git cheat sheet
 
+
 ## Contents
 - [Cloning and Changing Remotes](#cloning-and-changing-remotes)
     - [Cloning Only](#cloning-only)
@@ -12,6 +13,27 @@ Personal Git cheat sheet
     - [Squashing Commits During Merge](#squashing-commits-during-merge)
 - [Handling Merge Conflicts](#handling-merge-conflicts)
     - [Unable to Git Pull as Local Repo Commits have Diverged from Remote](#unable-to-git-pull-as-local-repo-commits-have-diverged-from-remote)
+
+
+## Setting Up
+
+Setting up git credentials on new machine. 
+
+<details>
+<summary><i>Click to expand</i></summary>
+
+_Reference: GitHub Docs for SSH keys_
+
+1. [Check for existing SSH key on machine](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
+
+1. [Generate new SSH key if none available](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+1. [Add SSH key to GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
+1. Use SSH URL for `git clone` (e.g. `ssh://git@github.com/username/repo.git`). Edit in `.git/config` if previously cloned using `https` or `git` URL. [See reference here](https://stackoverflow.com/a/7773605). 
+
+</details>
+
 
 ## Cloning and Changing Remotes
 
@@ -65,6 +87,7 @@ To quickly clone a public repo into a private repo. <i>Caveat: clone of public r
 1. To setup the new local folder to track changes in the public repo, see steps 7 onward in the [next section](#clone-and-track-updates) to create a tracking remote.
 
 </details>
+
 
 ### <u>Clone and Track Updates</u>
 
@@ -157,6 +180,7 @@ To clone a public repo into a private repo and <u>track changes of the public re
 
 </details>
 
+
 ## Co-Development
 
 <details>
@@ -180,6 +204,7 @@ Create new feature on new working branch.
     ```
 
 </details>
+
 
 ## Managing Changes
 
@@ -227,14 +252,35 @@ To clean up commits on one branch (e.g. dev branch) when merging it into another
 
 1. Push to recipient branch (e.g. main branch), create Pull Request on GitHub, and merge Pull Request. 
 
+### <u>Undoing Commits</U>
+
+1. Check past commits.
+
+    ```
+    git reflog
+    ```
+
+1. Reset current branch to desired commit (`HEAD@{x}`).
+
+    ```
+    git reset --hard HEAD@{x}
+    ```
+
+    For Windows:
+
+    ```
+    git reset --hard "HEAD@{x}"
+    ```
+
 </details>
+
 
 ## Handling Merge Conflicts
 
-### <u>Unable to Git Pull as Local Repo Commits have Diverged from Remote</u>
-
 <details>
 <summary><i>Click to expand</i></summary>
+
+### <u>Unable to Git Pull as Local Repo Commits have Diverged from Remote</u>
 
 - Fetch changes made to the upstream since the last `git fetch`, merge to local branch, and apply existing local commits to the top of the updated local branch (aka "rebasing the local branch on top of the upstream branch after fetching"). (<i>[Explainer](https://gitolite.com/git-pull--rebase)</i>)
 
@@ -243,6 +289,7 @@ To clean up commits on one branch (e.g. dev branch) when merging it into another
     ```
 
 </details>
+
 
 ## Handling Line Endings
 
@@ -262,6 +309,41 @@ git config --global core.autocrlf true
 ```
 
 </details>
+
+
+## Submodules
+
+<details>
+<summary><i>Click to expand</i></summary>
+
+### <u>Add submodule to Repo</u>
+
+1. Clone submodule into repo.
+
+    ```
+    git submodule add <submodule URL>
+    ```
+
+1. Commit and push changes to origin (new submodule folder and new .gitmodules file).
+
+### <u>Clone Repo with Submodules</u>
+
+1. Clone the repo.
+
+1. Initialise submodule.
+    
+    ```
+    git submodule init
+    ```
+
+1. Fetch data from submodule project.
+
+    ```
+    git submodule update
+    ```
+
+</details>
+
 
 ## Cleaning Up
 
