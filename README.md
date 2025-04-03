@@ -8,6 +8,8 @@ Personal Git cheat sheet
     - [Cloning Only](#cloning-only)
     - [Clone and Track Updates](#clone-and-track-updates)
 - [Co-Development](#co-development)
+    - [Managing Branches](#managing-branches)
+    - [Managing Tags](#managing-tags)
 - [Managing Changes](#managing-changes)
     - [Squashing Commits in General](#squashing-commits-in-general)
     - [Squashing Commits During Merge](#squashing-commits-during-merge)
@@ -206,6 +208,34 @@ Create new feature on new working branch.
 
     ```
     git push --set-upstream <remote name> <new branch name>
+    ```
+
+### Managing Tags
+
+Create new tag for latest tested version.
+
+1. Create new annotated tag from existing branch that has been tested (e.g. 'development').
+
+    ```
+    git tag -a <tag name>
+    ```
+
+    1. See current tags. 
+
+        ```
+        git tag
+        ```
+    
+    1. Check specific tag.
+
+        ```
+        git show <tag name>
+        ```
+
+1. Push the tag to remote.
+
+    ```
+    git push <remote name> <tag name>
     ```
 
 </details>
