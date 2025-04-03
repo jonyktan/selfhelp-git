@@ -13,6 +13,11 @@ Personal Git cheat sheet
     - [Squashing Commits During Merge](#squashing-commits-during-merge)
 - [Handling Merge Conflicts](#handling-merge-conflicts)
     - [Unable to Git Pull as Local Repo Commits have Diverged from Remote](#unable-to-git-pull-as-local-repo-commits-have-diverged-from-remote)
+    - ["Combining" Branches](#combining-branches)
+- [Handling Line Endings](#handling-line-endings)
+- [Submodules](#submodules)
+- [Cleaning Up](#cleaning-up)
+
 
 
 ## Setting Up
@@ -286,6 +291,26 @@ To clean up commits on one branch (e.g. dev branch) when merging it into another
 
     ```
     git pull --rebase
+    ```
+
+### <u>"Combining" Branches</u>
+
+- Merge commits from current branch on top of commits on another branch (stays on current branch). 
+
+    ```
+    git rebase <another branch>
+    ```
+
+- Check that the commit history on current branch is updated.
+
+    ```
+    git log
+    ```
+
+- Push the changes to the upstream.
+
+    ```
+    git push <remote name> --force-with-lease
     ```
 
 </details>
